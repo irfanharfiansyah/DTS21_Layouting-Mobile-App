@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -17,32 +16,38 @@
         android:background="@drawable/menu">
     </ImageButton>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/prev_song_image">
+            android:src="@drawable/prev_song_image"
+            android:layout_toStartOf="@id/current_song"
+            android:layout_centerVertical="true">
+
         </ImageView>
 
         <ImageView
-            android:layout_width="305dp"
+            android:id="@+id/current_song"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/current_song_image">
+            android:src="@drawable/current_song_image"
+            android:layout_centerHorizontal="true">
         </ImageView>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next_song_image">
+            android:src="@drawable/next_song_image"
+            android:layout_toEndOf="@id/current_song"
+            android:layout_centerVertical="true">
+
         </ImageView>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,44 +81,56 @@
         android:translationY="490dp">
     </ImageView>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:translationY="650dp">
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp">
 
         <ImageView
             android:layout_width="35dp"
-            android:translationX="-40dp"
+            android:translationX="-115dp"
+            android:layout_centerVertical="true"
             android:layout_height="wrap_content"
             android:src="@drawable/repeat">
         </ImageView>
+
         <ImageView
             android:layout_width="35dp"
+            android:layout_centerVertical="true"
+            android:translationX="-30dp"
             android:layout_height="wrap_content"
             android:src="@drawable/revind">
+
         </ImageView>
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginHorizontal="15dp"
             android:src="@drawable/play_button">
         </ImageView>
+
         <ImageView
             android:layout_width="35dp"
+            android:translationX="65dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:src="@drawable/fast_forward">
-        </ImageView>
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/speaker"
-            android:translationX="40dp">
+
         </ImageView>
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:src="@drawable/speaker"
+            android:translationX="150dp">
+        </ImageView>
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
